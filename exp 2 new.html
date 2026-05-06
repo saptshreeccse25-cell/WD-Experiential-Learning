@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision Tools Inc.</title>
+
+<!-- Link External CSS -->
+<link rel="stylesheet" href="exp2.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <h2>Precision Tools</h2>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Team</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <h1>Welcome to Precision Tools Inc.</h1>
+    <p>High Quality Manufacturing Solutions</p>
+    <button onclick="showMsg()">Explore</button>
+    <a href="#">Explore Course</a>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+    <h2>Meet Our Team</h2>
+
+    <div class="team-container">
+
+        <div class="member">
+            <img src="amit.jpg" alt="Amit">
+            <h3>Amit</h3>
+            <p>CEO</p>
+        </div>
+
+        <div class="member">
+            <img src="neha.jpg" alt="Neha">
+            <h3>Neha</h3>
+            <p>Engineer</p>
+        </div>
+
+        <div class="member">
+            <img src="rahul.jpg" alt="Rahul">
+            <h3>Rahul</h3>
+            <p>Manager</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="email" id="email" placeholder="Enter Email">
+        <textarea id="message" placeholder="Enter Message"></textarea>
+        <button type="submit" class="submit-btn">Send</button>
+    </form>
+
+</section>
+
+<!-- JAVASCRIPT -->
+<script>
+function showMsg() {
+    alert("Welcome to Precision Tools Inc.");
+}
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if (name === "" || email === "" || message === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+        alert("Invalid Email");
+        return;
+    }
+
+    alert("Form Submitted Successfully!");
+    this.reset();
+});
+</script>
+
+</body>
+</html>
